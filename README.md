@@ -10,6 +10,12 @@ A vision-based approach that recovers a cleaning robot's rotation angle from the
 
 ## 效果预览
 
+![双方向跟踪实时输出](fig/demo.gif)
+
+*双方向跟踪法逐帧输出：**绿色 = A 方向族，蓝色 = B 方向族，灰色 = 其余 LSD 线段**。左上角为实时读数——两族方向角各自独立累积，`A-B` 一致性误差稳定在 90° 附近，说明两个近似垂直的方向族被正确分离；当机器人被遮挡或纹理不足时，该值会明显偏离，这正是"不依赖真值的自检信号"的来源。*
+
+与上面动态过程对应的静态视角：车载画面先经透视变换归一化为鸟瞰图，再在其上提取结构线。
+
 | 原始机器人视角 | 鸟瞰图（BEV）变换后 |
 |---|---|
 | ![original](fig/original_view.png) | ![bev](fig/bev_view.png) |
@@ -83,7 +89,7 @@ def circular_mean_180(angles, weights):
 ├── code/
 │   ├── single_algorithm.py      # 单方向累积法
 │   └── double_algorithm.py      # 双方向跟踪法 + A/B 一致性评估
-├── fig/                         # 论文插图（结果曲线、流程图、检测示例）
+├── fig/                         # 论文插图；demo.gif 为双方向跟踪的动态演示
 ├── document.tex                 # 论文 LaTeX 源码
 ├── 基于光伏板结构线方向的机器人旋转角度视觉检测算法研究.pdf   # 论文全文
 └── README.md

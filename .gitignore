@@ -1,0 +1,44 @@
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+
+# ---------- 数据与媒体（体积大，不入库）----------
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.rar
+*.zip
+*.7z
+
+# ---------- 算法输出产物 ----------
+*_result.csv
+*_annotated.mp4
+*检测*.mp4
+*检测*.csv
+output/
+results/
+
+# ---------- LaTeX 中间文件 ----------
+*.synctex.gz
+*.synctex
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.bbl
+*.blg
+
+# ---------- 系统 / 编辑器 ----------
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
